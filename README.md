@@ -5,8 +5,6 @@ Uma API RESTful construída com Node.js, Express e TypeScript para gerenciar e e
 
 A API oferece funcionalidades como busca de receitas, adição, atualização e exclusão de receitas, além de gerenciamento de favoritos e avaliações.  
 
----
-
 ## **Funcionalidades**  
 - **Buscar receitas** por nome, ingredientes, tipo de refeição, tempo de preparo, e dificuldade.  
 - **Filtrar receitas** por categorias, como veganas, vegetarianas ou sem glúten.  
@@ -14,86 +12,358 @@ A API oferece funcionalidades como busca de receitas, adição, atualização e 
 - **Avaliações e comentários** para receitas.  
 - **Gerenciamento de favoritos** para usuários.  
 
----
-
 ## **Tecnologias Utilizadas**  
 - **Node.js**  
 - **Express.js**  
 - **TypeScript**  
-- Armazenamento de dados em arquivo JSON  
+- **Armazenamento de dados em arquivo JSON**
+
+## **🌐 Endpoints**
+
+### **🥗 Receitas**
+
+#### **🔹 1. Buscar Todas as Receitas**
+
+- **Endpoint:** `GET /recipes`
+- **Query Strings (opcional):**
+    - `name` → Filtrar por nome da receita
+    - `ingredient` → Filtrar por ingrediente específico
+    - `type` → Filtrar por tipo de refeição (`café da manhã`, `almoço`, `jantar`)
+    - `difficulty` → Filtrar por dificuldade (`Fácil`, `Médio`, `Difícil`)
+
+**Exemplo de Requisição:**
+
+```
+GET /recipes?ingredient=banana&type=café+da+manhã
+```
+
+**Resposta:**
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Panqueca de Banana",
+    "ingredients": ["Banana", "Ovo", "Aveia"],
+    "steps": ["Amasse a banana", "Misture com o ovo e a aveia", "Cozinhe em uma frigideira"],
+    "type": "Café da Manhã",
+    "time": "10 minutos",
+    "difficulty": "Fácil",
+    "category": "Sem Glúten",
+    "ratings": []
+  }
+]
+```
 
 ---
 
-## **Instalação e Configuração**  
+#### **🔹 2. Buscar Receita Específica**
 
-1. **Clone o repositório:**  
-   ```bash
-   git clone https://github.com/seu-usuario/node-ts-express-api-rest-culinary-recipes.git
-   cd node-ts-express-api-rest-culinary-recipes
-   ```  
+- **Endpoint:** `GET /recipes/:id`
 
-2. **Instale as dependências:**  
-   ```bash
-   npm install
-   ```  
+**Exemplo de Requisição:**
 
-3. **Execute o servidor de desenvolvimento:**  
-   ```bash
-   npm run dev
-   ```  
+```
+GET /recipes/1
+```
 
-4. A API estará disponível em: `http://localhost:3000`  
+**Resposta:**
 
----
-
-## **Endpoints Principais**  
-
-### **Receitas**  
-- `GET /recipes` - Buscar todas as receitas  
-- `GET /recipes/:id` - Buscar uma receita específica  
-- `POST /recipes` - Adicionar uma nova receita  
-- `PATCH /recipes/:id` - Atualizar uma receita existente  
-- `DELETE /recipes/:id` - Excluir uma receita  
-
-### **Favoritos**  
-- `GET /favorites` - Listar receitas favoritas  
-- `POST /favorites` - Adicionar uma receita aos favoritos  
-- `DELETE /favorites/:id` - Remover uma receita dos favoritos  
-
-### **Usuários**  
-- `POST /users/register` - Registrar um novo usuário  
-- `GET /users/profile` - Visualizar o perfil do usuário  
+```json
+{
+  "id": 1,
+  "name": "Panqueca de Banana",
+  "ingredients": ["Banana", "Ovo", "Aveia"],
+  "steps": ["Amasse a banana", "Misture com o ovo e a aveia", "Cozinhe em uma frigideira"],
+  "type": "Café da Manhã",
+  "time": "10 minutos",
+  "difficulty": "Fácil",
+  "category": "Sem Glúten",
+  "ratings": []
+}
+```
 
 ---
 
-## **Estrutura do Projeto**  
+#### **🔹 3. Criar Nova Receita**
 
-```plaintext
-src/
-├── controllers/
-│   ├── recipeController.ts
-│   ├── userController.ts
-├── services/
-│   ├── recipeService.ts
-├── models/
-│   ├── recipe.ts
-│   ├── user.ts
-├── routes/
-│   ├── recipeRoutes.ts
-│   ├── userRoutes.ts
-├── data/
-│   ├── recipes.json
-│   ├── users.json
-├── app.ts
-├── server.ts
-```  
+- **Endpoint:** `POST /recipes`
+- **Corpo da Requisição:**
+
+```json
+{
+  "name": "Omelete Simples",
+  "ingredients": ["Ovo", "Sal", "Queijo"],
+  "steps": ["Bata os ovos", "Tempere com sal", "Cozinhe em uma frigideira"],
+  "type": "Café da Manhã",
+  "time": "5 minutos",
+  "difficulty": "Fácil",
+  "category": "Vegetariano"
+}
+```
+
+**Resposta:**
+
+```json
+{
+  "id": 2,
+  "name": "Omelete Simples",
+  "ingredients": ["Ovo", "Sal", "Queijo"],
+  "steps": ["Bata os ovos", "Tempere com sal", "Cozinhe em uma frigideira"],
+  "type": "Café da Manhã",
+  "time": "5 minutos",
+  "difficulty": "Fácil",
+  "category": "Vegetariano"
+}
+```
+
+---
+
+#### **🔹 4. Atualizar Receita**
+
+- **Endpoint:** `PATCH /recipes/:id`
+- **Corpo da Requisição (Exemplo de Atualização):**
+
+```json
+{
+  "time": "7 minutos",
+  "difficulty": "Médio"
+}
+```
+
+**Resposta:**
+
+```json
+{
+  "message": "Recipe updated successfully"
+}
+```
+
+---
+
+#### **🔹 5. Excluir Receita**
+
+- **Endpoint:** `DELETE /recipes/:id`
+
+**Exemplo de Requisição:**
+
+```
+DELETE /recipes/2
+
+```
+
+**Resposta:**
+
+```json
+{
+  "message": "Recipe deleted successfully"
+}
+
+```
+
+---
+
+#### **🔹 6. Adicionar Avaliação a uma Receita**  
+
+- **Endpoint:** `POST /recipes/:id/ratings`  
+- **O que faz?** Permite que usuários adicionem uma avaliação (nota e comentário) a uma receita.  
+
+**Corpo da Requisição:**  
+
+```json
+{
+  "userId": 101,
+  "rating": 5,
+  "comment": "Ótima receita! Fácil e rápida de fazer."
+}
+```
+
+**Regras:**  
+- `rating` deve ser um número entre 1 e 5.  
+- `comment` é opcional, mas recomendado para melhor feedback.  
+
+**Resposta:**  
+
+```json
+{
+  "message": "Rating added successfully",
+  "recipeId": 2,
+  "rating": {
+    "userId": 101,
+    "rating": 5,
+    "comment": "Ótima receita! Fácil e rápida de fazer."
+  }
+}
+```
+
+**Lógica:**  
+1. Buscar a receita pelo `id`.  
+2. Adicionar o novo rating à lista existente.  
+3. Atualizar `recipes.json`.  
+
+---
+
+### **⭐ Favoritos (Gerenciamento dentro de `users.json`)**
+
+#### **🔹 1. Listar Receitas Favoritas do Usuário**
+
+- **Endpoint:** `GET /favorites?userId={{id}}`
+- **O que faz?** Busca os favoritos armazenados no usuário.
+
+**Exemplo de Requisição:**
+
+```bash
+GET /favorites?userId=101
+```
+
+**Resposta:**
+
+```json
+{
+  "userId": 101,
+  "recipes": [
+  {
+    "id": 2,
+    "name": "Omelete Simples",
+    "ingredients": ["Ovo", "Sal", "Queijo"],
+    "steps": ["Bata os ovos", "Tempere com sal", "Cozinhe em uma frigideira"],
+    "type": "Café da Manhã",
+    "time": "5 minutos",
+    "difficulty": "Fácil",
+    "category": "Vegetariano"
+  },
+  {
+    "id": 5,
+    "name": "Macarrão ao Alho e Óleo",
+    "ingredients": ["Macarrão", "Alho", "Azeite", "Sal", "Pimenta"],
+    "steps": [
+      "Cozinhe o macarrão até ficar al dente",
+      "Aqueça o azeite em uma panela",
+      "Adicione o alho picado e refogue até dourar",
+      "Misture o macarrão ao alho e tempere com sal e pimenta"
+    ],
+    "type": "Almoço",
+    "time": "15 minutos",
+    "difficulty": "Fácil",
+    "category": "Vegano"
+  }
+]
+
+}
+```
+
+---
+
+#### **🔹 2. Adicionar Receita aos Favoritos**
+
+- **Endpoint:** `POST /favorites`
+- **O que faz?** Adiciona um `recipeId` à lista de favoritos do usuário dentro de `users.json`.
+
+**Corpo da Requisição:**
+
+```json
+{
+  "userId": 101,
+  "recipeId": 5
+}
+```
+
+**Lógica:**
+
+1. Buscar o usuário pelo `userId`.
+2. Verificar se a receita já está nos favoritos.
+3. Se não estiver, adicionar o `recipeId` à lista.
+4. Atualizar `users.json`.
+
+**Resposta:**
+
+```json
+{
+  "message": "Recipe 5 - Macarrão ao Alho e Óleo added to favorites successfully"
+}
+```
+
+---
+
+#### **🔹 3. Remover Receita dos Favoritos**
+
+- **Endpoint:** `DELETE /favorites/:recipeId?userId=101`
+- **O que faz?** Remove um `recipeId` da lista de favoritos do usuário dentro de `users.json`.
+
+**Lógica:**
+
+1. Buscar o usuário pelo `userId`.
+2. Remover o `recipeId` da lista de favoritos, se existir.
+3. Atualizar `users.json`.
+
+**Resposta:**
+
+```json
+{
+  "message": "Favorite removed successfully"
+}
+```
+
+---
+
+### **👥 Usuários**
+
+#### **🔹 1. Criar Usuário**
+
+- **Endpoint:** `POST /users`
+- **Corpo da Requisição:**
+
+```json
+{
+  "name": "Carlos Oliveira",
+  "email": "carlos@email.com"
+}
+
+```
+
+**Resposta:**
+
+```json
+{
+  "id": 103,
+  "name": "Carlos Oliveira",
+  "email": "carlos@email.com",
+  "favorites": []
+}
+
+```
+
+---
+
+#### **🔹 2. Visualizar Perfil do Usuário**
+
+- **Endpoint:** `GET  /users/:id`
+
+**Exemplo de Requisição:**
+
+```
+GET /users/101
+
+```
+
+**Resposta:**
+
+```json
+{
+  "id": 101,
+  "name": "João Silva",
+  "email": "joao@email.com",
+  "favorites": [5, 2]
+}
+
+```
 
 ---
 
 ## **Exemplo de Receita JSON**  
 ```json
 {
-  "id": "1",
+  "id": 1,
   "name": "Panqueca de Banana",
   "ingredients": ["Banana", "Ovo", "Aveia"],
   "steps": [
@@ -102,7 +372,7 @@ src/
     "Cozinhe em uma frigideira."
   ],
   "type": "Café da Manhã",
-  "time": 600, // 600 segundos (10 min)
+  "time": "10 minutos",
   "difficulty": "Fácil",
   "category": "Sem Glúten",
   "ratings": [
@@ -115,17 +385,29 @@ src/
 }
 ```  
 
+## **Exemplo de Usuário JSON**
+```json
+[
+  {
+    "id": 101,
+    "name": "João Silva",
+    "email": "joao@email.com",
+    "favorites": [5, 2, 8]
+  },
+  {
+    "id": 102,
+    "name": "Maria Souza",
+    "email": "maria@email.com",
+    "favorites": [3, 7]
+  }
+]
+```
 ---
 
 ## **Possíveis Expansões Futuras**  
 - **Integração com APIs externas** para buscar receitas adicionais.  
 - **Autenticação de usuários** com JWT.  
 - **Migração para banco de dados**, como MongoDB ou PostgreSQL.  
-
----
-
-## **Contribuição**  
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests.  
 
 ---
 
