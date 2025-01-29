@@ -7,3 +7,10 @@ export const ok = (data: object): HttpResponse => {
     body: data
   }
 }
+
+export const badRequest = (message?: string): HttpResponse => {
+  return {
+    statuscode: StatusCode.BAD_REQUEST,
+    body: (message) ? { message: message } : {}
+  }
+}

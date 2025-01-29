@@ -1,6 +1,7 @@
 import path from "path"
 import fs from 'fs'
 import { RecipeModel } from "../models/recipe-model"
+import jsonQuery from 'json-query'
 
 const readFile = async () => {
   const fileName = 'recipes.json'
@@ -11,7 +12,16 @@ const readFile = async () => {
 }
 
 
-export const getRecipesList = async (): Promise<RecipeModel[]> => {
-  return JSON.parse(await readFile())
+export const getRecipesList = async (query?: string): Promise<RecipeModel[]> => {
+  let database = await readFile()
+  // console.log(database)
+
+  if (query) {
+    // return query
+    // return jsonQuery(`recipes${query}`, { data: database }).value
+    database = jsonQuery(`recipes[name="Panqueca de Banana"]`, { data: database }).value
+    console.log(database)
+  }
+  return JSON.parse(database)
 }
 
