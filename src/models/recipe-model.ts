@@ -8,5 +8,4 @@ export interface RecipeModel {
   difficulty: string,
   category: string,
   ratings: []
-
 }

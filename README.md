@@ -362,27 +362,30 @@ GET /users/101
 
 ## **Exemplo de Receita JSON**  
 ```json
-{
-  "id": 1,
-  "name": "Panqueca de Banana",
-  "ingredients": ["Banana", "Ovo", "Aveia"],
-  "steps": [
-    "Amasse a banana.",
-    "Misture com o ovo e a aveia.",
-    "Cozinhe em uma frigideira."
-  ],
-  "type": "Café da Manhã",
-  "time": "10 minutos",
-  "difficulty": "Fácil",
-  "category": "Sem Glúten",
-  "ratings": [
-    {
-      "user": "usuario1",
-      "rating": 5,
-      "comment": "Deliciosa!"
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "name": "Panqueca de Banana",
+    "ingredients": ["Banana", "Ovo", "Aveia"],
+    "steps": [
+      "Amasse a banana.",
+      "Misture com o ovo e a aveia.",
+      "Cozinhe em uma frigideira."
+    ],
+    "type": "Café da Manhã",
+    "time": "10 minutos",
+    "difficulty": "Fácil",
+    "category": "Sem Glúten",
+    "ratings": [
+      {
+        "user": "usuario1",
+        "rating": 5,
+        "comment": "Deliciosa!"
+      }
+    ]
+  }
+]
+
 ```  
 
 ## **Exemplo de Usuário JSON**
