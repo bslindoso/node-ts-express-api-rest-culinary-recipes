@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Panqueca de Banana",
+    "ingredients": [
+      "Banana",
+      "Ovo",
+      "Aveia"
+    ],
+    "steps": [
+      "Amasse a banana.",
+      "Misture com o ovo e a aveia.",
+      "Cozinhe em uma frigideira."
+    ],
+    "type": "Café da Manhã",
+    "time": "10 minutos",
+    "difficulty": "Fácil",
+    "category": "Sem Glúten",
+    "ratings": []
+  },
+  {
+    "id": 2,
+    "name": "Omelete Simples",
+    "ingredients": [
+      "Ovo",
+      "Sal",
+      "Queijo"
+    ],
+    "steps": [
+      "Bata os ovos",
+      "Tempere com sal",
+      "Cozinhe em uma frigideira"
+    ],
+    "type": "Café da Manhã",
+    "time": "5 minutos",
+    "difficulty": "Fácil",
+    "category": "Vegetariano",
+    "ratings": []
+  },
+  {
+    "id": 3,
+    "name": "Macarrão ao Alho e Óleo",
+    "ingredients": [
+      "Macarrão",
+      "Alho",
+      "Azeite",
+      "Sal",
+      "Pimenta"
+    ],
+    "steps": [
+      "Cozinhe o macarrão até ficar al dente",
+      "Aqueça o azeite em uma panela",
+      "Adicione o alho picado e refogue até dourar",
+      "Misture o macarrão ao alho e tempere com sal e pimenta"
+    ],
+    "type": "Almoço",
+    "time": "15 minutos",
+    "difficulty": "Fácil",
+    "category": "Vegano",
+    "ratings": []
+  }
+]
