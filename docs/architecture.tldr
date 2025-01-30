@@ -491,10 +491,10 @@
 				"dash": "draw",
 				"size": "s",
 				"font": "mono",
-				"text": "- listRecipes\n- getRecipeById\n- createRecipe\n- updateRecipeById\n- deleteRecipeById\n- createRecipeRating",
+				"text": "- listRecipes\n- getRecipe\n- createRecipe\n- updateRecipe\n- deleteRecipe\n- createRecipeRating",
 				"align": "middle",
 				"verticalAlign": "middle",
-				"growY": 3.9349625564577764,
+				"growY": 3.987254426574964,
 				"url": "",
 				"scale": 1
 			},
@@ -544,7 +544,7 @@
 				"dash": "draw",
 				"size": "s",
 				"font": "mono",
-				"text": "- listFavorites\n- createFavorite\n- deleteFavoriteByRecipeId",
+				"text": "- listFavorites\n- createFavorite\n- deleteFavorite",
 				"align": "middle",
 				"verticalAlign": "middle",
 				"growY": 0,
@@ -703,7 +703,7 @@
 				"dash": "draw",
 				"size": "s",
 				"font": "mono",
-				"text": "- getRecipesList\n- getRecipeById\n- filterRecipes\n- addNewRecipe\n- updateRecipe",
+				"text": "- getRecipesList\n- getRecipe\n- addNewRecipe\n- removeRecipe\n- updateRecipe",
 				"align": "middle",
 				"verticalAlign": "middle",
 				"growY": 0,
@@ -959,9 +959,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": 1907.9173546841096,
-			"y": 629.6308685700292,
-			"lastActivityTimestamp": 1738229787664,
+			"x": 1181.9694087880735,
+			"y": 417.81385949957195,
+			"lastActivityTimestamp": 1738240077753,
 			"meta": {}
 		},
 		{
@@ -981,7 +981,7 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 1520,
+				"w": 499,
 				"h": 721
 			},
 			"insets": [
@@ -1013,7 +1013,7 @@
 			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [],
-			"hoveredShapeId": "shape:B14ROqs-9A6P1FM1VbLzh",
+			"hoveredShapeId": "shape:ReeuzKL-2gDDXigysAhrU",
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -1023,9 +1023,9 @@
 			"typeName": "instance_page_state"
 		},
 		{
-			"x": -1246.0963607971535,
-			"y": -418.0651410160022,
-			"z": 1.4747190086368098,
+			"x": -748.4508099753101,
+			"y": -263.90193092699326,
+			"z": 0.7796666646497956,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"

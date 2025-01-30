@@ -46,9 +46,10 @@ export const getRecipesList = async (query?: string): Promise<RecipeModel[] | Me
   return foundRecipes
 }
 
-export const getRecipeById = async (id: number): Promise<RecipeModel | Messages> => {
+export const getRecipe = async (id: number): Promise<RecipeModel | Messages> => {
 
   const data = await readFile()
+
   if (!data) return Messages.INTERNAL_SERVER_ERROR
 
   const foundRecipe = data.find((recipe: RecipeModel) => recipe.id === id)
@@ -76,4 +77,11 @@ export const addNewRecipe = async (recipe: RecipeModel): Promise<number | Messag
   if (!isSavedSuccessfully) return Messages.INTERNAL_SERVER_ERROR
 
   return nextIndex
+}
+
+export const updateRecipe = async (recipe: object): Promise<Messages> => {
+  const isSavedSuccessfully = await saveOnFile(recipe)
+  if (!isSavedSuccessfully) return Messages.INTERNAL_SERVER_ERROR
+
+  return Messages.OK
 }

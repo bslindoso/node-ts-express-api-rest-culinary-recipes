@@ -1,4 +1,5 @@
 export interface RecipeModel {
+  [key: string]: any,
   id: number,
   name: string,
   ingredients: string[],

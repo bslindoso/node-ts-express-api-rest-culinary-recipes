@@ -11,6 +11,13 @@ export const isRecipeModel = (obj: any): obj is RecipeModel => {
     && !!obj.category && typeof obj.category === 'string'
 }
 
-// export const gerRecipeModelKeys = () => {
-//   return ['id', 'name', 'ingredients', 'steps', 'type', 'time', 'difficulty', 'category', 'ratings']
-// }
+// All Recipes properties
+export const getRecipeModelKeys = () => {
+  return ['id', 'name', 'ingredients', 'steps', 'type', 'time', 'difficulty', 'category', 'ratings']
+}
+
+// Params allowed for GET Recipe Route queryString
+export const allowedRecipesParams = () => {
+  return ['name', 'ingredients', 'type', 'difficulty']
+}
+

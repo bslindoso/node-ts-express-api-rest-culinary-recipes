@@ -37,6 +37,9 @@ export enum HttpStatusMessage {
   BAD_REQUEST = "Bad request",
   INTERNAL_SERVER_ERROR = "Internal Server Error",
   INVALID_PROPERTIES = "One or more properties are invalid",
+  INVALID_OR_MISSING_PROPERTIES = "One or more properties are invalid or missing",
   NOT_FOUND = "Not found",
-  INVALID_PARAMETERS = "One or more parameters are invalid"
+  INVALID_PARAMETERS = "One or more parameters are invalid",
+  RECIPE_ID_NOT_FOUND = "Recipe ID not found",
+  RECIPE_UPDATED_SUCCESSFULLY = "Recipe updated successfully"
 }
