@@ -1,0 +1,589 @@
+[
+  {
+    "id": 1,
+    "name": "Panqueca de Banana",
+    "ingredients": [
+      "Banana",
+      "Ovo",
+      "Aveia"
+    ],
+    "steps": [
+      "Amasse a banana.",
+      "Misture com o ovo e a aveia.",
+      "Cozinhe em uma frigideira."
+    ],
+    "type": "Café da Manhã",
+    "time": "10 minutos",
+    "difficulty": "Fácil",
+    "category": "Sem Glúten",
+    "ratings": []
+  },
+  {
+    "id": 2,
+    "name": "Omelete Simples",
+    "ingredients": [
+      "Ovo",
+      "Sal",
+      "Queijo"
+    ],
+    "steps": [
+      "Bata os ovos",
+      "Tempere com sal",
+      "Cozinhe em uma frigideira"
+    ],
+    "type": "Café da Manhã",
+    "time": "5 minutos",
+    "difficulty": "Fácil",
+    "category": "Vegetariano",
+    "ratings": []
+  },
+  {
+    "id": 3,
+    "name": "Pão Caseiro",
+    "ingredients": [
+      "Farinha",
+      "Fermento",
+      "Sal",
+      "Água"
+    ],
+    "steps": [
+      "Misture os ingredientes.",
+      "Amasse a massa.",
+      "Deixe crescer e asse no forno."
+    ],
+    "type": "Café da Manhã",
+    "time": "2 horas",
+    "difficulty": "Médio",
+    "category": "Vegano",
+    "ratings": []
+  },
+  {
+    "id": 4,
+    "name": "Waffles de Aveia",
+    "ingredients": [
+      "Aveia",
+      "Leite",
+      "Ovo",
+      "Mel"
+    ],
+    "steps": [
+      "Misture tudo.",
+      "Coloque na máquina de waffles.",
+      "Sirva quente com mel."
+    ],
+    "type": "Café da Manhã",
+    "time": "15 minutos",
+    "difficulty": "Médio",
+    "category": "Vegetariano",
+    "ratings": []
+  },
+  {
+    "id": 5,
+    "name": "Croissant Caseiro",
+    "ingredients": [
+      "Farinha",
+      "Manteiga",
+      "Açúcar",
+      "Leite"
+    ],
+    "steps": [
+      "Prepare a massa.",
+      "Dobre e resfrie várias vezes.",
+      "Asse até dourar."
+    ],
+    "type": "Café da Manhã",
+    "time": "4 horas",
+    "difficulty": "Difícil",
+    "category": "Sem Glúten",
+    "ratings": []
+  },
+  {
+    "id": 6,
+    "name": "Macarrão ao Alho e Óleo",
+    "ingredients": [
+      "Macarrão",
+      "Alho",
+      "Azeite",
+      "Sal",
+      "Pimenta"
+    ],
+    "steps": [
+      "Cozinhe o macarrão.",
+      "Aqueça o azeite.",
+      "Adicione o alho e misture."
+    ],
+    "type": "Almoço",
+    "time": "15 minutos",
+    "difficulty": "Fácil",
+    "category": "Vegano",
+    "ratings": []
+  },
+  {
+    "id": 7,
+    "name": "Frango Grelhado",
+    "ingredients": [
+      "Peito de Frango",
+      "Sal",
+      "Pimenta",
+      "Azeite"
+    ],
+    "steps": [
+      "Tempere o frango.",
+      "Grelhe até dourar.",
+      "Sirva com legumes."
+    ],
+    "type": "Almoço",
+    "time": "20 minutos",
+    "difficulty": "Fácil",
+    "category": "Sem Glúten",
+    "ratings": []
+  },
+  {
+    "id": 8,
+    "name": "Risoto de Cogumelos",
+    "ingredients": [
+      "Arroz Arbóreo",
+      "Cogumelos",
+      "Cebola",
+      "Caldo de Legumes",
+      "Parmesão"
+    ],
+    "steps": [
+      "Refogue cebola e cogumelos.",
+      "Adicione arroz e caldo.",
+      "Mexa até ficar cremoso."
+    ],
+    "type": "Almoço",
+    "time": "40 minutos",
+    "difficulty": "Médio",
+    "category": "Vegetariano",
+    "ratings": []
+  },
+  {
+    "id": 9,
+    "name": "Feijoada",
+    "ingredients": [
+      "Feijão Preto",
+      "Carne de Porco",
+      "Linguiça",
+      "Cebola",
+      "Alho"
+    ],
+    "steps": [
+      "Cozinhe o feijão.",
+      "Adicione as carnes.",
+      "Tempere bem e cozinhe lentamente."
+    ],
+    "type": "Almoço",
+    "time": "3 horas",
+    "difficulty": "Difícil",
+    "category": "Sem Glúten",
+    "ratings": []
+  },
+  {
+    "id": 10,
+    "name": "Lasanha de Berinjela",
+    "ingredients": [
+      "Berinjela",
+      "Queijo",
+      "Molho de Tomate",
+      "Carne Moída"
+    ],
+    "steps": [
+      "Monte as camadas.",
+      "Asse no forno.",
+      "Sirva quente."
+    ],
+    "type": "Almoço",
+    "time": "50 minutos",
+    "difficulty": "Difícil",
+    "category": "Vegetariano",
+    "ratings": []
+  },
+  {
+    "id": 11,
+    "name": "Sopa de Legumes",
+    "ingredients": [
+      "Cenoura",
+      "Batata",
+      "Abobrinha",
+      "Cebola",
+      "Sal"
+    ],
+    "steps": [
+      "Corte os legumes.",
+      "Cozinhe até amolecer.",
+      "Tempere e sirva quente."
+    ],
+    "type": "Jantar",
+    "time": "25 minutos",
+    "difficulty": "Fácil",
+    "category": "Vegano",
+    "ratings": []
+  },
+  {
+    "id": 12,
+    "name": "Salada de Atum",
+    "ingredients": [
+      "Atum",
+      "Alface",
+      "Tomate",
+      "Cebola",
+      "Azeite"
+    ],
+    "steps": [
+      "Misture todos os ingredientes.",
+      "Tempere a gosto.",
+      "Sirva fresco."
+    ],
+    "type": "Jantar",
+    "time": "10 minutos",
+    "difficulty": "Fácil",
+    "category": "Sem Glúten",
+    "ratings": []
+  },
+  {
+    "id": 13,
+    "name": "Hambúrguer Caseiro",
+    "ingredients": [
+      "Carne Moída",
+      "Pão",
+      "Alface",
+      "Queijo",
+      "Tomate"
+    ],
+    "steps": [
+      "Modele a carne.",
+      "Grelhe no fogo alto.",
+      "Monte o hambúrguer."
+    ],
+    "type": "Jantar",
+    "time": "30 minutos",
+    "difficulty": "Médio",
+    "category": "Vegetariano",
+    "ratings": []
+  },
+  {
+    "id": 14,
+    "name": "Torta de Frango",
+    "ingredients": [
+      "Frango",
+      "Massa de Torta",
+      "Cebola",
+      "Creme de Leite"
+    ],
+    "steps": [
+      "Prepare o recheio.",
+      "Coloque na massa e asse.",
+      "Sirva morno."
+    ],
+    "type": "Jantar",
+    "time": "1 hora",
+    "difficulty": "Difícil",
+    "category": "Sem Glúten",
+    "ratings": []
+  },
+  {
+    "id": 15,
+    "name": "Bolo de Cenoura",
+    "ingredients": [
+      "Cenoura",
+      "Farinha",
+      "Ovo",
+      "Açúcar",
+      "Chocolate"
+    ],
+    "steps": [
+      "Bata os ingredientes.",
+      "Asse no forno.",
+      "Cubra com chocolate."
+    ],
+    "type": "Café da Manhã",
+    "time": "45 minutos",
+    "difficulty": "Médio",
+    "category": "Doce",
+    "ratings": []
+  },
+  {
+    "id": 16,
+    "name": "Granola Caseira",
+    "ingredients": [
+      "Aveia",
+      "Mel",
+      "Nozes",
+      "Uva Passa"
+    ],
+    "steps": [
+      "Misture os ingredientes.",
+      "Asse até dourar.",
+      "Armazene em pote fechado."
+    ],
+    "type": "Café da Manhã",
+    "time": "30 minutos",
+    "difficulty": "Fácil",
+    "category": "Vegano",
+    "ratings": []
+  },
+  {
+    "id": 17,
+    "name": "Cuscuz Nordestino",
+    "ingredients": [
+      "Flocos de Milho",
+      "Água",
+      "Sal",
+      "Manteiga"
+    ],
+    "steps": [
+      "Hidrate os flocos de milho.",
+      "Cozinhe no vapor.",
+      "Sirva com manteiga."
+    ],
+    "type": "Café da Manhã",
+    "time": "15 minutos",
+    "difficulty": "Fácil",
+    "category": "Tradicional",
+    "ratings": []
+  },
+  {
+    "id": 18,
+    "name": "Escondidinho de Carne Seca",
+    "ingredients": [
+      "Carne Seca",
+      "Mandioca",
+      "Queijo",
+      "Cebola"
+    ],
+    "steps": [
+      "Cozinhe a mandioca.",
+      "Desfie a carne seca.",
+      "Monte e leve ao forno."
+    ],
+    "type": "Almoço",
+    "time": "50 minutos",
+    "difficulty": "Médio",
+    "category": "Nordestino",
+    "ratings": []
+  },
+  {
+    "id": 19,
+    "name": "Feijão Tropeiro",
+    "ingredients": [
+      "Feijão",
+      "Farinha",
+      "Bacon",
+      "Linguiça",
+      "Cebola"
+    ],
+    "steps": [
+      "Cozinhe o feijão.",
+      "Frite bacon e linguiça.",
+      "Misture tudo com farinha."
+    ],
+    "type": "Almoço",
+    "time": "40 minutos",
+    "difficulty": "Médio",
+    "category": "Tradicional",
+    "ratings": []
+  },
+  {
+    "id": 20,
+    "name": "Nhoque de Batata",
+    "ingredients": [
+      "Batata",
+      "Farinha",
+      "Ovo",
+      "Molho de Tomate"
+    ],
+    "steps": [
+      "Cozinhe e amasse a batata.",
+      "Misture com farinha e ovo.",
+      "Modele e cozinhe."
+    ],
+    "type": "Almoço",
+    "time": "1 hora",
+    "difficulty": "Difícil",
+    "category": "Italiana",
+    "ratings": []
+  },
+  {
+    "id": 21,
+    "name": "Moqueca de Peixe",
+    "ingredients": [
+      "Peixe",
+      "Leite de Coco",
+      "Pimentão",
+      "Tomate",
+      "Coentro"
+    ],
+    "steps": [
+      "Tempere o peixe.",
+      "Refogue os ingredientes.",
+      "Cozinhe no leite de coco."
+    ],
+    "type": "Almoço",
+    "time": "45 minutos",
+    "difficulty": "Médio",
+    "category": "Nordestino",
+    "ratings": []
+  },
+  {
+    "id": 22,
+    "name": "Pizza Marguerita",
+    "ingredients": [
+      "Massa de Pizza",
+      "Molho de Tomate",
+      "Mussarela",
+      "Manjericão"
+    ],
+    "steps": [
+      "Monte a pizza.",
+      "Asse no forno.",
+      "Finalize com manjericão."
+    ],
+    "type": "Jantar",
+    "time": "30 minutos",
+    "difficulty": "Médio",
+    "category": "Italiana",
+    "ratings": []
+  },
+  {
+    "id": 23,
+    "name": "Tacos Mexicanos",
+    "ingredients": [
+      "Tortilla",
+      "Carne Moída",
+      "Queijo",
+      "Alface",
+      "Tomate"
+    ],
+    "steps": [
+      "Prepare a carne.",
+      "Monte os tacos.",
+      "Sirva com molho."
+    ],
+    "type": "Jantar",
+    "time": "20 minutos",
+    "difficulty": "Fácil",
+    "category": "Mexicana",
+    "ratings": []
+  },
+  {
+    "id": 24,
+    "name": "Yakissoba",
+    "ingredients": [
+      "Macarrão Oriental",
+      "Frango",
+      "Legumes",
+      "Molho Shoyu"
+    ],
+    "steps": [
+      "Cozinhe o macarrão.",
+      "Frite o frango.",
+      "Misture tudo com o molho."
+    ],
+    "type": "Jantar",
+    "time": "25 minutos",
+    "difficulty": "Médio",
+    "category": "Asiática",
+    "ratings": []
+  },
+  {
+    "id": 25,
+    "name": "Sushi de Salmão",
+    "ingredients": [
+      "Arroz para Sushi",
+      "Salmão",
+      "Nori",
+      "Shoyu"
+    ],
+    "steps": [
+      "Cozinhe o arroz.",
+      "Modele os sushis.",
+      "Sirva com shoyu."
+    ],
+    "type": "Jantar",
+    "time": "1 hora",
+    "difficulty": "Difícil",
+    "category": "Japonesa",
+    "ratings": []
+  },
+  {
+    "id": 26,
+    "name": "Ratatouille",
+    "ingredients": [
+      "Berinjela",
+      "Abobrinha",
+      "Tomate",
+      "Pimentão"
+    ],
+    "steps": [
+      "Fatie os vegetais.",
+      "Monte em camadas.",
+      "Asse até dourar."
+    ],
+    "type": "Jantar",
+    "time": "50 minutos",
+    "difficulty": "Médio",
+    "category": "Francesa",
+    "ratings": []
+  },
+  {
+    "id": 27,
+    "name": "Pavê de Chocolate",
+    "ingredients": [
+      "Biscoito",
+      "Chocolate",
+      "Creme de Leite",
+      "Leite Condensado"
+    ],
+    "steps": [
+      "Faça camadas de biscoito e creme.",
+      "Refrigere.",
+      "Sirva gelado."
+    ],
+    "type": "Jantar",
+    "time": "4 horas",
+    "difficulty": "Fácil",
+    "category": "Sobremesa",
+    "ratings": []
+  },
+  {
+    "id": 28,
+    "name": "Mousse de Maracujá",
+    "ingredients": [
+      "Maracujá",
+      "Leite Condensado",
+      "Creme de Leite"
+    ],
+    "steps": [
+      "Bata tudo no liquidificador.",
+      "Refrigere.",
+      "Sirva gelado."
+    ],
+    "type": "Jantar",
+    "time": "3 horas",
+    "difficulty": "Fácil",
+    "category": "Sobremesa",
+    "ratings": []
+  },
+  {
+    "id": 29,
+    "name": "Torta de Limão",
+    "ingredients": [
+      "Bolacha",
+      "Manteiga",
+      "Limão",
+      "Leite Condensado"
+    ],
+    "steps": [
+      "Prepare a massa.",
+      "Recheie com creme de limão.",
+      "Leve à geladeira."
+    ],
+    "type": "Jantar",
+    "time": "2 horas",
+    "difficulty": "Médio",
+    "category": "Sobremesa",
+    "ratings": []
+  }
+]
