@@ -703,7 +703,7 @@
 				"dash": "draw",
 				"size": "s",
 				"font": "mono",
-				"text": "- getRecipesList\n- getRecipeById\n- filterRecipes\n- saveRecipe\n- updateRecipe",
+				"text": "- getRecipesList\n- getRecipeById\n- filterRecipes\n- addNewRecipe\n- updateRecipe",
 				"align": "middle",
 				"verticalAlign": "middle",
 				"growY": 0,
@@ -959,9 +959,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": 1325.5768929167905,
-			"y": 430.29450109004733,
-			"lastActivityTimestamp": 1738115099092,
+			"x": 1907.9173546841096,
+			"y": 629.6308685700292,
+			"lastActivityTimestamp": 1738229787664,
 			"meta": {}
 		},
 		{
@@ -981,8 +981,8 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 1284.36865234375,
-				"h": 607.0139770507812
+				"w": 1520,
+				"h": 721
 			},
 			"insets": [
 				false,
@@ -997,7 +997,7 @@
 			"isChatting": false,
 			"highlightedUserIds": [],
 			"isFocused": true,
-			"devicePixelRatio": 1.1515384912490845,
+			"devicePixelRatio": 1,
 			"isCoarsePointer": false,
 			"isHoveringCanvas": true,
 			"openMenus": [],
@@ -1023,9 +1023,9 @@
 			"typeName": "instance_page_state"
 		},
 		{
-			"x": -786.8795298125677,
-			"y": -317.5751472958106,
-			"z": 1.1912496076888763,
+			"x": -1246.0963607971535,
+			"y": -418.0651410160022,
+			"z": 1.4747190086368098,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"

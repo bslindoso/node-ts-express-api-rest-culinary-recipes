@@ -5,40 +5,38 @@ import { StatusCode } from "./status-code";
 export const ok = (data?: any): HttpResponse => {
   return {
     statuscode: StatusCode.OK,
-    body: data ? data : { message: 'success' }
+    body: (data) ? data : { message: HttpStatusMessage.OK }
+  }
+}
+
+export const notFound = (message?: string): HttpResponse => {
+  return {
+    statuscode: StatusCode.NOT_FOUND,
+    body: (message) ? { message: message } : { message: HttpStatusMessage.NOT_FOUND }
   }
 }
 
 export const badRequest = (message?: string): HttpResponse => {
   return {
     statuscode: StatusCode.BAD_REQUEST,
-    body: (message) ? { message: message } : {}
+    body: (message) ? { message: message } : { message: HttpStatusMessage.BAD_REQUEST }
   }
 }
 
 export const internalServerError = (message?: string): HttpResponse => {
   return {
     statuscode: StatusCode.INTERNAL_SERVER_ERROR,
-    body: (message) ? { message: message } : {}
+    body: (message) ? { message: message } : { message: HttpStatusMessage.INTERNAL_SERVER_ERROR }
   }
 }
 
 
 // MESSAGES
 export enum HttpStatusMessage {
-  OK = "OK",
-  CREATED = "Created",
-  ACCEPTED = "Accepted",
-  NO_CONTENT = "No Content",
-  BAD_REQUEST = "Bad Request",
-  UNAUTHORIZED = "Unauthorized",
-  FORBIDDEN = "Forbidden",
-  NOT_FOUND = "Not Found",
-  METHOD_NOT_ALLOWED = "Method Not Allowed",
-  CONFLICT = "Conflict",
+  OK = "Success",
+  BAD_REQUEST = "Bad request",
   INTERNAL_SERVER_ERROR = "Internal Server Error",
-  NOT_IMPLEMENTED = "Not Implemented",
-  BAD_GATEWAY = "Bad Gateway",
-  SERVICE_UNAVAILABLE = "Service Unavailable",
-  GATEWAY_TIMEOUT = "Gateway Timeout",
+  INVALID_PROPERTIES = "One or more properties are invalid",
+  NOT_FOUND = "Not found",
+  INVALID_PARAMETERS = "One or more parameters are invalid"
 }

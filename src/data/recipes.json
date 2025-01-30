@@ -585,5 +585,24 @@
     "difficulty": "Médio",
     "category": "Sobremesa",
     "ratings": []
+  },
+  {
+    "id": 30,
+    "name": "Torta de Maçã",
+    "ingredients": [
+      "Bolacha",
+      "Manteiga",
+      "Maçã",
+      "Leite Condensado"
+    ],
+    "steps": [
+      "Prepare a massa.",
+      "Recheie com creme de maçã.",
+      "Leve à geladeira."
+    ],
+    "type": "Jantar",
+    "time": "2 horas",
+    "difficulty": "Médio",
+    "category": "Sobremesa"
   }
 ]
