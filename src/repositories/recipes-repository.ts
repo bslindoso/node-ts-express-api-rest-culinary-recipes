@@ -85,3 +85,18 @@ export const updateRecipe = async (recipe: object): Promise<Messages> => {
 
   return Messages.OK
 }
+
+export const removeRecipe = async (id: number): Promise<RecipeModel | Messages> => {
+  const data = await readFile()
+  const foundId = data.findIndex((d: RecipeModel) => d.id === id)
+  if (foundId !== -1) {
+
+    const deletedData = data[foundId]
+    data.splice(foundId, 1)
+    saveOnFile(data)
+    return deletedData
+
+  } else {
+    return Messages.RECIPE_ID_NOT_FOUND
+  }
+}

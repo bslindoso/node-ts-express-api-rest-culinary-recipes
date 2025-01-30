@@ -33,8 +33,8 @@ export const listRecipes = async (params: object): Promise<HttpResponse> => {
   return response.ok(data)
 }
 
-export const getRecipe = async (id: number): Promise<HttpResponse> => {
-
+export const getRecipe = async (id: any): Promise<HttpResponse> => {
+  id = parseInt(id)
   const data: RecipeModel | Messages = await RecipesRepository.getRecipe(id)
 
   if (data === Messages.INTERNAL_SERVER_ERROR) return response.internalServerError()
@@ -84,6 +84,19 @@ export const updateRecipe = async (id: any, body: any): Promise<HttpResponse> =>
   const returnData = {
     message: Messages.RECIPE_UPDATED_SUCCESSFULLY,
     recipe: foundRecipe
+  }
+  return response.ok(returnData)
+}
+
+export const deleteRecipe = async (id: any): Promise<HttpResponse> => {
+  id = parseInt(id)
+  const data = await RecipesRepository.removeRecipe(id)
+
+  if (data === Messages.RECIPE_ID_NOT_FOUND) return response.notFound(Messages.RECIPE_ID_NOT_FOUND)
+
+  const returnData = {
+    message: Messages.RECIPE_DELETED_SUCCESSFULLY,
+    recipe: data
   }
   return response.ok(returnData)
 }

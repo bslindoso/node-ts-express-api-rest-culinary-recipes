@@ -41,5 +41,6 @@ export enum HttpStatusMessage {
   NOT_FOUND = "Not found",
   INVALID_PARAMETERS = "One or more parameters are invalid",
   RECIPE_ID_NOT_FOUND = "Recipe ID not found",
-  RECIPE_UPDATED_SUCCESSFULLY = "Recipe updated successfully"
+  RECIPE_UPDATED_SUCCESSFULLY = "Recipe updated successfully",
+  RECIPE_DELETED_SUCCESSFULLY = "Recipe deleted successfully"
 }
