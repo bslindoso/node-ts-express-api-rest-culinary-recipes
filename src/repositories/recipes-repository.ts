@@ -28,7 +28,7 @@ const saveOnFile = async (data: object) => {
   }
 }
 
-export const getRecipesList = async (query?: string): Promise<RecipeModel[] | Messages> => {
+export const getRecipesList = async (query?: string): Promise<RecipeModel[] | Messages.INTERNAL_SERVER_ERROR> => {
   const data = await readFile()
   if (!data) return Messages.INTERNAL_SERVER_ERROR
 
@@ -46,7 +46,7 @@ export const getRecipesList = async (query?: string): Promise<RecipeModel[] | Me
   return foundRecipes
 }
 
-export const getRecipe = async (id: number): Promise<RecipeModel | Messages> => {
+export const getRecipe = async (id: number): Promise<RecipeModel | Messages.INTERNAL_SERVER_ERROR | Messages.NOT_FOUND> => {
 
   const data = await readFile()
 
@@ -58,7 +58,7 @@ export const getRecipe = async (id: number): Promise<RecipeModel | Messages> => 
   return foundRecipe
 }
 
-export const addNewRecipe = async (recipe: RecipeModel): Promise<number | Messages> => {
+export const addNewRecipe = async (recipe: RecipeModel): Promise<number | Messages.INTERNAL_SERVER_ERROR> => {
   const data = await readFile()
   if (!data) return Messages.INTERNAL_SERVER_ERROR
 
@@ -79,14 +79,14 @@ export const addNewRecipe = async (recipe: RecipeModel): Promise<number | Messag
   return nextIndex
 }
 
-export const updateRecipe = async (recipe: object): Promise<Messages> => {
+export const updateRecipe = async (recipe: RecipeModel[]): Promise<Messages.INTERNAL_SERVER_ERROR | Messages.OK> => {
   const isSavedSuccessfully = await saveOnFile(recipe)
   if (!isSavedSuccessfully) return Messages.INTERNAL_SERVER_ERROR
 
   return Messages.OK
 }
 
-export const removeRecipe = async (id: number): Promise<RecipeModel | Messages> => {
+export const removeRecipe = async (id: number): Promise<RecipeModel | Messages.RECIPE_ID_NOT_FOUND> => {
   const data = await readFile()
   const foundId = data.findIndex((d: RecipeModel) => d.id === id)
   if (foundId !== -1) {

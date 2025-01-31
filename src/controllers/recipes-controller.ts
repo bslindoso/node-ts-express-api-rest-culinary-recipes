@@ -34,3 +34,10 @@ export const deleteRecipe = async (req: Request, res: Response) => {
 
   res.status(httpResponse.statuscode).json(httpResponse.body)
 }
+
+export const createRecipeRating = async (req: Request, res: Response) => {
+
+  const httpResponse = await RecipesService.createRecipeRating(req.params.id, req.body)
+
+  res.status(httpResponse.statuscode).json(httpResponse.body)
+}

@@ -1,3 +1,5 @@
+import { RatingModel } from "./rating-model";
+
 export interface RecipeModel {
   [key: string]: any,
   id: number,
@@ -8,5 +10,5 @@ export interface RecipeModel {
   time: string,
   difficulty: string,
   category: string,
-  ratings: []
+  ratings: RatingModel[]
 }
