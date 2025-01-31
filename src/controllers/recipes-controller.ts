@@ -8,7 +8,7 @@ export const listRecipes = async (req: Request, res: Response) => {
   res.status(httpResponse.statuscode).json(httpResponse.body)
 }
 
-export const getRecipeById = async (req: Request, res: Response) => {
+export const getRecipe = async (req: Request, res: Response) => {
 
   const httpResponse = await RecipesService.getRecipe(req.params.id)
 

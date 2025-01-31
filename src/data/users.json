@@ -1,0 +1,21 @@
+[
+  {
+    "id": 101,
+    "name": "João Silva",
+    "email": "joao@email.com",
+    "favorites": [
+      5,
+      2,
+      8
+    ]
+  },
+  {
+    "id": 102,
+    "name": "Maria Souza",
+    "email": "maria@email.com",
+    "favorites": [
+      3,
+      7
+    ]
+  }
+]
