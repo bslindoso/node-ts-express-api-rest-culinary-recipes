@@ -15,3 +15,10 @@ export const getUser = async (req: Request, res: Response) => {
 
   res.status(httpResponse.statuscode).json(httpResponse.body)
 }
+
+export const registerUser = async (req: Request, res: Response) => {
+
+  const httpResponse = await UsersService.registerUser(req.body)
+
+  res.status(httpResponse.statuscode).json(httpResponse.body)
+}

@@ -17,5 +17,29 @@
       3,
       7
     ]
+  },
+  {
+    "id": 4,
+    "name": "Bruno Lindoso",
+    "email": "b@c.com",
+    "favorites": []
+  },
+  {
+    "id": 5,
+    "name": "Bruno Lindoso",
+    "email": "b@c.com",
+    "favorites": []
+  },
+  {
+    "id": 6,
+    "name": "Bruno Lindoso",
+    "email": "b@c.com",
+    "favorites": []
+  },
+  {
+    "id": 7,
+    "name": "Bruno Lindoso",
+    "email": "b@c.com",
+    "favorites": []
   }
 ]

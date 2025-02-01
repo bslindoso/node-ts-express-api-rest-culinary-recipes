@@ -45,5 +45,6 @@ export enum HttpStatusMessage {
   RECIPE_DELETED_SUCCESSFULLY = "Recipe deleted successfully",
   RATING_SAVED_SUCCESSFULLY = "Rating saved successfully",
   RATING_EXISTS_FOR_THIS_USER = "Rating already exists for this user",
-  USER_ID_NOT_FOUND = "User ID not found"
+  USER_ID_NOT_FOUND = "User ID not found",
+  USER_REGISTERED_SUCCESSFULLY = "User registered successfully",
 }

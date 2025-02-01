@@ -15,3 +15,4 @@ router.post('/recipes/:id/ratings', RecipesController.createRecipeRating)
 // Users
 router.get('/users', UsersController.listUsers)
 router.get('/users/:id', UsersController.getUser)
+router.post('/users', UsersController.registerUser)
