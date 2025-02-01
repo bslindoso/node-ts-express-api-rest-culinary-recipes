@@ -135,7 +135,27 @@ GET /recipes/1
 
 ```json
 {
-  "message": "Recipe updated successfully"
+    "message": "Recipe updated successfully",
+    "recipe": {
+        "id": 30,
+        "name": "Apple Pie",
+        "ingredients": [
+            "Bolacha",
+            "Manteiga",
+            "Maçã",
+            "Leite Condensado",
+            "Arroz"
+        ],
+        "steps": [
+            "Prepare a massa.",
+            "Recheie com creme de maçã.",
+            "Leve à geladeira."
+        ],
+        "type": "Lanche",
+        "time": "2 horas",
+        "difficulty": "Médio",
+        "category": "Sobremesa"
+    }
 }
 ```
 

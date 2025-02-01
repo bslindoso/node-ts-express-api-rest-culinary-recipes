@@ -58,7 +58,7 @@ export const getRecipe = async (id: number): Promise<RecipeModel | Messages.INTE
   return foundRecipe
 }
 
-export const addNewRecipe = async (recipe: RecipeModel): Promise<number | Messages.INTERNAL_SERVER_ERROR> => {
+export const addNewRecipe = async (recipe: RecipeModel): Promise<RecipeModel | Messages.INTERNAL_SERVER_ERROR> => {
   const data = await readFile()
   if (!data) return Messages.INTERNAL_SERVER_ERROR
 
@@ -68,15 +68,18 @@ export const addNewRecipe = async (recipe: RecipeModel): Promise<number | Messag
 
   const { id, ...recipeNoID } = recipe
 
-  data.push({
+  const newRecipe = {
     id: nextIndex,
-    ...recipeNoID
-  })
+    ...recipeNoID,
+    ratings: []
+  }
+
+  data.push(newRecipe)
 
   const isSavedSuccessfully = await saveOnFile(data)
   if (!isSavedSuccessfully) return Messages.INTERNAL_SERVER_ERROR
 
-  return nextIndex
+  return newRecipe
 }
 
 export const updateRecipe = async (recipe: RecipeModel[]): Promise<Messages.INTERNAL_SERVER_ERROR | Messages.OK> => {

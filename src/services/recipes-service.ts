@@ -51,7 +51,7 @@ export const createRecipe = async (body: object): Promise<HttpResponse> => {
 
   if (data === Messages.INTERNAL_SERVER_ERROR) return response.internalServerError()
 
-  return response.ok(body)
+  return response.ok(data)
 }
 
 export const updateRecipe = async (id: any, body: any): Promise<HttpResponse> => {
@@ -96,8 +96,7 @@ export const deleteRecipe = async (id: any): Promise<HttpResponse> => {
   if (data === Messages.RECIPE_ID_NOT_FOUND) return response.notFound(Messages.RECIPE_ID_NOT_FOUND)
 
   const returnData = {
-    message: Messages.RECIPE_DELETED_SUCCESSFULLY,
-    recipe: data
+    message: Messages.RECIPE_DELETED_SUCCESSFULLY
   }
   return response.ok(returnData)
 }
@@ -121,7 +120,7 @@ export const createRecipeRating = async (id: any, body: RatingModel): Promise<Ht
   if (!foundRecipe) return response.notFound(Messages.RECIPE_ID_NOT_FOUND)
 
   // check if foundRecipe has any rating and if the body rate ID is one of the list
-  const rates = foundRecipe.ratings
+  const rates = foundRecipe.ratings ? foundRecipe.ratings : []
   const alreadyHaveRatingForThisUser = (rates.length > 0 && rates.some((r: RatingModel) => r.userId === body.userId))
   if (alreadyHaveRatingForThisUser) return response.badRequest(Messages.RATING_EXISTS_FOR_THIS_USER)
 
@@ -131,8 +130,9 @@ export const createRecipeRating = async (id: any, body: RatingModel): Promise<Ht
   if (saved === Messages.INTERNAL_SERVER_ERROR) return response.internalServerError()
 
   const returnData = {
-    message: Messages.RATING_SAVED_SUCCESSFULLY,
-    recipe: foundRecipe
+    message: Messages.RATING_ADDED_SUCCESSFULLY,
+    recipeId: foundRecipe.id,
+    rating: body
   }
 
   return response.ok(returnData)
