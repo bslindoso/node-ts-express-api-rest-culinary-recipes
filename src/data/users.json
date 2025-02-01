@@ -1,6 +1,6 @@
 [
   {
-    "id": 101,
+    "id": 1,
     "name": "João Silva",
     "email": "joao@email.com",
     "favorites": [
@@ -10,7 +10,7 @@
     ]
   },
   {
-    "id": 102,
+    "id": 2,
     "name": "Maria Souza",
     "email": "maria@email.com",
     "favorites": [
