@@ -2,6 +2,7 @@ import fs from "fs"
 import path from "path"
 import { HttpStatusMessage as Messages } from "../utils/http-response-helper"
 import { UserModel } from "../models/user-model"
+import * as RecipesRepository from "../repositories/recipes-repository"
 
 const FILENAME = "users.json"
 const FILEPATH = path.join(__dirname, "..", "/data/", FILENAME)
@@ -39,7 +40,7 @@ export const getUser = async (id: number): Promise<UserModel | Messages.NOT_FOUN
   return foundUser
 }
 
-export const saveUser = async (user: UserModel): Promise<UserModel | Messages.INTERNAL_SERVER_ERROR> => {
+export const saveNewUser = async (user: UserModel): Promise<UserModel | Messages.INTERNAL_SERVER_ERROR> => {
   const data = await readFile()
   if (data === Messages.INTERNAL_SERVER_ERROR) return data
   // verify next ID
@@ -57,4 +58,30 @@ export const saveUser = async (user: UserModel): Promise<UserModel | Messages.IN
   if (saved === Messages.INTERNAL_SERVER_ERROR) return saved
 
   return newUser
+}
+
+export const updateUserFavorites = async (userId: number, recipeId: number) => {
+
+  const data = await getUsersList()
+  if (data === Messages.INTERNAL_SERVER_ERROR) return data
+
+  const user = data.find((user: UserModel) => user.id === userId)
+  if (!user) return Messages.NOT_FOUND
+
+  // check if recipeId already exists, if so, don't save
+  const recipeAlreadyFavorite = user.favorites?.some((r: number) => r === recipeId)
+  if (recipeAlreadyFavorite) return Messages.CONFLICT
+
+  // check if recipe exists
+  const recipe = await RecipesRepository.getRecipe(recipeId)
+  if (recipe === Messages.NOT_FOUND) return Messages.RECIPE_ID_NOT_FOUND
+  if (recipe === Messages.INTERNAL_SERVER_ERROR) return Messages.RECIPE_ID_NOT_FOUND
+
+  // save favorite recipe
+  user.favorites?.push(recipeId)
+
+  const saved = await saveOnFile(data)
+  if (saved === Messages.INTERNAL_SERVER_ERROR) return saved
+
+  return `Recipe ${recipe.id} - ${recipe.name} added to favorites successfully`
 }

@@ -3,6 +3,7 @@ import { StatusCode } from "./status-code";
 
 // HTTP RESPONSES
 export const ok = (data?: any): HttpResponse => {
+  data = (typeof data === 'string') ? { message: data } : data
   return {
     statuscode: StatusCode.OK,
     body: (data) ? data : { message: HttpStatusMessage.OK }
@@ -30,6 +31,13 @@ export const badRequest = (message?: string): HttpResponse => {
   }
 }
 
+export const conflict = (message?: string): HttpResponse => {
+  return {
+    statuscode: StatusCode.CONFLICT,
+    body: (message) ? { message: message } : { message: HttpStatusMessage.CONFLICT }
+  }
+}
+
 export const internalServerError = (message?: string): HttpResponse => {
   return {
     statuscode: StatusCode.INTERNAL_SERVER_ERROR,
@@ -46,6 +54,7 @@ export enum HttpStatusMessage {
   INVALID_PROPERTIES = "One or more properties are invalid",
   INVALID_OR_MISSING_PROPERTIES = "One or more properties are invalid or missing",
   NOT_FOUND = "Not found",
+  CONFLICT = "Conflict",
   INVALID_PARAMETERS = "One or more parameters are invalid",
   RECIPE_ID_NOT_FOUND = "Recipe ID not found",
   RECIPE_UPDATED_SUCCESSFULLY = "Recipe updated successfully",
@@ -54,5 +63,7 @@ export enum HttpStatusMessage {
   RATING_EXISTS_FOR_THIS_USER = "Rating already exists for this user",
   USER_ID_NOT_FOUND = "User ID not found",
   USER_REGISTERED_SUCCESSFULLY = "User registered successfully",
-  FAVORITE_USERID_MUST_BE_A_NUMBER = "User ID must be a number"
+  FAVORITE_USERID_MUST_BE_A_NUMBER = "User ID must be a number",
+  FAVORITE_CONFLICT = "Recipe already favorite for this user",
+  FAVORITE_ADDED_SUCCESSFULLY = "Recipe added to favorites successfully"
 }

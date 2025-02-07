@@ -49,15 +49,11 @@ export const saveFavorite = async (body: any) => {
   const userId: number = body.userId
   const recipeId: number = body.recipeId
 
-  const user = await UserRepository.getUser(userId)
-  if (user === Messages.INTERNAL_SERVER_ERROR) return response.internalServerError()
-  if (user === Messages.NOT_FOUND) return response.notFound(Messages.USER_ID_NOT_FOUND)
+  const updateUser = await UserRepository.updateUserFavorites(userId, recipeId)
+  if (updateUser === Messages.INTERNAL_SERVER_ERROR) return response.internalServerError()
+  if (updateUser === Messages.NOT_FOUND) return response.notFound(Messages.USER_ID_NOT_FOUND)
+  if (updateUser === Messages.CONFLICT) return response.conflict(Messages.FAVORITE_CONFLICT)
+  if (updateUser === Messages.RECIPE_ID_NOT_FOUND) return response.notFound(updateUser)
 
-  // UPDATE USER FAVORITES (CREATE REPOSITORY updateUser)
-  user.favorites?.push(recipeId)
-  console.log(user)
-
-
-
-  return response.ok()
+  return response.ok(updateUser)
 }
