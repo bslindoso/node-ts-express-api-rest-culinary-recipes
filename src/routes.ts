@@ -1,6 +1,7 @@
 import { Router } from "express";
 import * as RecipesController from "./controllers/recipes-controller";
 import * as UsersController from "./controllers/users-controller"
+import * as FavoritesController from "./controllers/favorites-controller"
 
 export const router = Router()
 
@@ -16,3 +17,7 @@ router.post('/recipes/:id/ratings', RecipesController.createRecipeRating)
 router.get('/users', UsersController.listUsers)
 router.get('/users/:id', UsersController.getUser)
 router.post('/users', UsersController.registerUser)
+
+// Favorites
+router.get('/favorites', FavoritesController.listFavoritesByUserId)
+router.post('/favorites', FavoritesController.saveFavorite)

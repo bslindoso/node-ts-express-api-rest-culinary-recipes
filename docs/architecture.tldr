@@ -239,7 +239,7 @@
 				"dash": "draw",
 				"size": "s",
 				"font": "mono",
-				"text": "- recipes-controller.ts\n- favorite-recipes-controller.ts\n- users-controller.ts",
+				"text": "- recipes-controller.ts\n- favorites-controller.ts\n- users-controller.ts",
 				"align": "start",
 				"verticalAlign": "middle",
 				"growY": 0,
@@ -544,7 +544,7 @@
 				"dash": "draw",
 				"size": "s",
 				"font": "mono",
-				"text": "- listFavorites\n- createFavorite\n- deleteFavorite",
+				"text": "- listFavoritesByUserId\n- saveFavorite\n- deleteFavorite",
 				"align": "middle",
 				"verticalAlign": "middle",
 				"growY": 0,
@@ -556,7 +556,7 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 903.1370474395185,
+			"x": 949.3396039428987,
 			"y": 662.3954037256486,
 			"rotation": 0,
 			"isLocked": true,
@@ -567,8 +567,8 @@
 			"props": {
 				"color": "black",
 				"size": "s",
-				"w": 292.609375,
-				"text": "favorite-recipes-service.ts",
+				"w": 216.92037963867188,
+				"text": "favorites-service.ts",
 				"font": "mono",
 				"textAlign": "start",
 				"autoSize": true,
@@ -959,9 +959,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": 635.7089839099046,
-			"y": 693.1350154801547,
-			"lastActivityTimestamp": 1738418190342,
+			"x": 893.5646458237195,
+			"y": 645.5805447673911,
+			"lastActivityTimestamp": 1738894766595,
 			"meta": {}
 		},
 		{
@@ -981,8 +981,8 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 1591,
-				"h": 672
+				"w": 1348.6304931640625,
+				"h": 503.6739807128906
 			},
 			"insets": [
 				false,
@@ -997,7 +997,7 @@
 			"isChatting": false,
 			"highlightedUserIds": [],
 			"isFocused": true,
-			"devicePixelRatio": 1,
+			"devicePixelRatio": 1.1515384912490845,
 			"isCoarsePointer": false,
 			"isHoveringCanvas": true,
 			"openMenus": [],
@@ -1013,7 +1013,7 @@
 			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [],
-			"hoveredShapeId": "shape:B14ROqs-9A6P1FM1VbLzh",
+			"hoveredShapeId": "shape:ReeuzKL-2gDDXigysAhrU",
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -1023,9 +1023,9 @@
 			"typeName": "instance_page_state"
 		},
 		{
-			"x": 83.07080557951213,
-			"y": -268.20507981005863,
-			"z": 0.6942320962508743,
+			"x": -576.792163526115,
+			"y": -498.7289890959508,
+			"z": 0.8493232567952751,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"

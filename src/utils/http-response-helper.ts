@@ -9,6 +9,13 @@ export const ok = (data?: any): HttpResponse => {
   }
 }
 
+export const noContent = (): HttpResponse => {
+  return {
+    statuscode: StatusCode.NO_CONTENT,
+    body: {}
+  }
+}
+
 export const notFound = (message?: string): HttpResponse => {
   return {
     statuscode: StatusCode.NOT_FOUND,
@@ -47,4 +54,5 @@ export enum HttpStatusMessage {
   RATING_EXISTS_FOR_THIS_USER = "Rating already exists for this user",
   USER_ID_NOT_FOUND = "User ID not found",
   USER_REGISTERED_SUCCESSFULLY = "User registered successfully",
+  FAVORITE_USERID_MUST_BE_A_NUMBER = "User ID must be a number"
 }
