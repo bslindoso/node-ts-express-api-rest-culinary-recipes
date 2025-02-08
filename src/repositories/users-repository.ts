@@ -60,7 +60,7 @@ export const saveNewUser = async (user: UserModel): Promise<UserModel | Messages
   return newUser
 }
 
-export const updateUserFavorites = async (userId: number, recipeId: number) => {
+export const updateUserFavorite = async (userId: number, recipeId: number) => {
 
   const data = await getUsersList()
   if (data === Messages.INTERNAL_SERVER_ERROR) return data
@@ -80,8 +80,29 @@ export const updateUserFavorites = async (userId: number, recipeId: number) => {
   // save favorite recipe
   user.favorites?.push(recipeId)
 
+  // save on flie
   const saved = await saveOnFile(data)
   if (saved === Messages.INTERNAL_SERVER_ERROR) return saved
 
   return `Recipe ${recipe.id} - ${recipe.name} added to favorites successfully`
+}
+
+export const deleteUserFavorite = async (userId: number, recipeId: number) => {
+  const data = await getUsersList()
+  if (data === Messages.INTERNAL_SERVER_ERROR) return data
+
+  const user = data.find((user: UserModel) => user.id === userId)
+  if (!user) return Messages.USER_ID_NOT_FOUND
+
+  // remove favorite recipe
+  const recipeIndex = user.favorites.findIndex(fav => fav === recipeId)
+  if (recipeIndex === -1) return Messages.RECIPE_ID_NOT_FOUND
+
+  user.favorites.splice(recipeIndex, 1)
+
+  // save on flie
+  const saved = await saveOnFile(data)
+  if (saved === Messages.INTERNAL_SERVER_ERROR) return saved
+
+  return Messages.FAVORITE_REMOVED_SUCCESSFULLY
 }

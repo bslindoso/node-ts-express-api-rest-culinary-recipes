@@ -21,3 +21,4 @@ router.post('/users', UsersController.registerUser)
 // Favorites
 router.get('/favorites', FavoritesController.listFavoritesByUserId)
 router.post('/favorites', FavoritesController.saveFavorite)
+router.delete('/favorites/:id', FavoritesController.deleteFavorite)

@@ -63,7 +63,9 @@ export enum HttpStatusMessage {
   RATING_EXISTS_FOR_THIS_USER = "Rating already exists for this user",
   USER_ID_NOT_FOUND = "User ID not found",
   USER_REGISTERED_SUCCESSFULLY = "User registered successfully",
-  FAVORITE_USERID_MUST_BE_A_NUMBER = "User ID must be a number",
+  USER_ID_MUST_BE_A_NUMBER = "User ID must be a number",
+  RECIPE_ID_MUST_BE_A_NUMBER = "Recipe ID must be a number",
   FAVORITE_CONFLICT = "Recipe already favorite for this user",
-  FAVORITE_ADDED_SUCCESSFULLY = "Recipe added to favorites successfully"
+  FAVORITE_ADDED_SUCCESSFULLY = "Recipe added to favorites successfully",
+  FAVORITE_REMOVED_SUCCESSFULLY = "Recipe removed from favorite successfully"
 }

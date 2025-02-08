@@ -14,3 +14,9 @@ export const saveFavorite = async (req: Request, res: Response) => {
 
   res.status(httpResponse.statuscode).json(httpResponse.body)
 }
+
+export const deleteFavorite = async (req: Request, res: Response) => {
+  const httpResponse = await FavoritesService.deleteFavorite(req.params, req.query)
+
+  res.status(httpResponse.statuscode).json(httpResponse.body)
+}
